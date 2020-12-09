@@ -1,10 +1,14 @@
-pa=0 
-function avPa(){ 
-if (pa==0){ 
-         cc=1;
-        document.getElementsByName('knapp').src="bulbon.gif" 
-  }else{ 
-        cc=0 ;
-         document.getElementByName('knapp').src="bulboff.gif"} 
-        } 
+pa=0;
+  
+function avPa(i){ 
+      
+      if (pa==0){ 
+            pa=1;
+            i.style.backgroundColor='green';
+      }
+      else{ 
+            pa=0;
+            i.style.backgroundColor='red';
+      } 
+} 
     

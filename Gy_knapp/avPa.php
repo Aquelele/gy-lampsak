@@ -12,14 +12,16 @@
     <?php
         $onOff = 0;
         function tryck() {
-            if($onOff==0):
+            if($onOff==0){
                 $onOff=1;
-                turnon();
-            else:
+              turnon();
+            }
+            else{
                 $onOff=0;
-                turnoff();
-
+               turnoff();
+            }
         }
+
         function turnon() {
             system(“ gpio-g mode 24 out “) ;
             system(“ gpio-g write 24 1”) ;
@@ -29,17 +31,14 @@
             system(“ gpio-g mode 24 out “) ;
             system(“ gpio-g write 24 0”) ;
         }
+
     ?>
 
 </head>
 <body>
-    <a href="#" onclick="tryck().avPa()">
-        <div class="knapp">
-            <div class="knappText">
-            
-            </div>
-        </div>
-    </a>
+    
+    <button class="knapp" onclick="tryck().avPa(this)">KNAPP</button>
+    
 
 </body>
 </html>

@@ -11,33 +11,45 @@
     
     <?php
         $onOff = 0;
+        
+        function turnon() {
+            echo "på";
+               system("gpio-g mode 24 out") ;
+               system("gpio-g write 24 1") ;
+            }
+    
+            function turnoff() {
+                echo "av";
+               system("gpio-g mode 24 out") ;
+               system("gpio-g write 24 0") ;
+            }
         function tryck() {
+            echo "tryk";
             if($onOff==0){
                 $onOff=1;
-              turnon();
+                turnon();
             }
             else{
-                $onOff=0;
+               $onOff=0;
                turnoff();
             }
         }
+        if (isset($_GET['t'])) {
+            tryck();
+          }
 
-        function turnon() {
-            system(“ gpio-g mode 24 out “) ;
-            system(“ gpio-g write 24 1”) ;
-        }
-
-        function turnoff() {
-            system(“ gpio-g mode 24 out “) ;
-            system(“ gpio-g write 24 0”) ;
-        }
-
+      
+    
+    
+      
     ?>
+    
+
 
 </head>
 <body>
     
-    <button class="knapp" onclick="tryck().avPa(this)">KNAPP</button>
+    <button class="knapp" href='avPa.php?t=true' onclick="avPa(this)">KNAPP</button>
     
 
 </body>

@@ -10,37 +10,34 @@
     <script src="script.js"></script>
     
     <?php
-        $onOff = 0;
-        
-        function turnon() {
-            echo "på";
-               system("gpio-g mode 24 out") ;
-               system("gpio-g write 24 1") ;
+              function turnon() {
+                echo "på";
+                system("gpio-g mode 24 out") ;
+                system("gpio-g write 24 1") ;
             }
-    
+        
             function turnoff() {
                 echo "av";
-               system("gpio-g mode 24 out") ;
-               system("gpio-g write 24 0") ;
+                system("gpio-g mode 24 out") ;
+                system("gpio-g write 24 0") ;
             }
-        function tryck() {
-            echo "tryk";
-            if($onOff==0){
-                $onOff=1;
-                turnon();
-            }
-            else{
-               $onOff=0;
-               turnoff();
-            }
-        }
-        if (isset($_GET['t'])) {
-            tryck();
-          }
+          
+            
+            
+        if(isset($_POST['på'])) { 
+            turnon();
 
-      
-    
-    
+            echo '<style>#på{visibility: hidden !important;}</style>';
+ 
+        } 
+        if(isset($_POST['av'])) { 
+              turnoff();
+              echo '<style>#av{visibility: hidden !important;}</style>';
+              
+        }
+        elseif(isset($_POST['på'])==false && isset($_POST['av'])==false){
+            echo '<style>#av{visibility: hidden !important;}</style>';
+        }
       
     ?>
     
@@ -48,8 +45,14 @@
 
 </head>
 <body>
+
+  
+    <form method="post"> 
+        <input id="på" type="submit" name="på" value="På"/> 
+          
+        <input id="av" type="submit" name="av" value="Av"/> 
+    </form>
     
-    <button class="knapp" href='avPa.php?t=true' onclick="avPa(this)">KNAPP</button>
     
 
 </body>

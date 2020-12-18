@@ -1,8 +1,19 @@
 .knapp{
     border-radius: 50%;
-    background-color: red;
     width: 100px;
     height: 100px;
   
     
 }
+#av{
+    visibility: visible;
+    width: 5%;
+    height: 3%;
+}
+
+#på{
+    visibility: visible;
+    width: 5%;
+    height: 3%;
+}
+

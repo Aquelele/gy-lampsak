@@ -22,7 +22,7 @@
                 system("gpio-g write 24 0") ;
             }
             
-        if(isset($_COOKIE['intlysM']) || isset($_COOKIE['lysM']) || isset($_COOKIE['start']) && isset($_COOKIE['slut']) || isset($_POST['start']) && isset($_POST['slut'])){
+        /*if(isset($_COOKIE['intlysM']) || isset($_COOKIE['lysM']) || isset($_COOKIE['start']) && isset($_COOKIE['slut']) || isset($_POST['start']) && isset($_POST['slut'])){
             if(isset($_COOKIE['start']) && isset($_COOKIE['slut']) || isset($_POST['start']) && isset($_POST['slut'])){
                 
                 if(isset($_POST['start']) && isset($_POST['slut'])){
@@ -108,10 +108,14 @@
             elseif(isset($_POST['på'])==false && isset($_POST['av'])==false){
                 echo '<style>#av{visibility: hidden !important;}</style>';
             }
-        }
-        /*$file = fopen("times.txt", "r");
-        echo fread($file,"8");
-        fclose($file);*/
+        }*/
+        $file = fopen("times.txt", "r");
+        $times = fread($file,"8");
+        fclose($file);
+        $start = substr($times, 0, 4);
+        $stop = substr($times, 5, 9);
+
+        
     ?>
     
 
@@ -129,9 +133,10 @@
     <p>Vill du sätta en timer</p> <input id="time" type="checkbox" onclick="timer()"/>
    
     <form method="post">
-        <input id="start" type="text" name="start" value="Startid: hh:mm"/> 
-        
-        <input id="slut" type="text" name="slut" value="Sluttid: hh:mm"/>
+        Starttid:
+        <input id="start" type="text" name="start" value="hh:mm"/> 
+        Sluttid:
+        <input id="slut" type="text" name="slut" value="hh:mm"/>
 
         <input id="tidSett" type="submit" value="Sett"/> 
     </form>

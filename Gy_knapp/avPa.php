@@ -67,6 +67,7 @@
             if(isset($_POST['på'])) { 
                 turnon();
                 echo '<style>#på{visibility: hidden !important;}</style>';
+                echo '<style>#av{visibility: visible !important;}</style>';
                 $på = $_POST['på'];
                 setcookie('lysM', $på, time() + (86400 * 7));
                 setcookie('intlysM', "", time() - 3600);
@@ -76,6 +77,7 @@
             if(isset($_POST['av'])) { 
                 turnoff();
                 echo '<style>#av{visibility: hidden !important;}</style>';
+                echo '<style>#på{visibility: visible !important;}</style>';
                 $av = $_POST['av'];
                 setcookie('intlysM', $av, time() + (86400 * 7));
                 setcookie('lysM', "", time() - 3600);

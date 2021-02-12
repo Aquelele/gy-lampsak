@@ -1,22 +1,19 @@
-#st{
-    display: block;
-    width: 10%;
+#start{
+    display: none;
+    width: 15%;
     height: 10%;
     
 }
-
-#sl{
-    display: block;
-    width: 10%;
+#slut{
+    display: none;
+    width: 15%;
     height: 10%;
 }
-
-#ts{
-    display: block;
+#tidSett{
+    display: none;
     width: 5%;
     height: 10%;
 }
-
 #av{
     visibility: visible;
     width: 5%;

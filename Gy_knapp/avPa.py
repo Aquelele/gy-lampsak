@@ -1,21 +1,21 @@
 import RPi.GPIO as gpio
 import datetime
 import os
-def turnOn() {
+
+def turnOn():
     gpio.setmode(gpio.BCM)
     gpio.setup(18, gpio.OUT)
     gpio.output(18, gpio.HIGH)
-}   
         
-def turnOff() {
+def turnOff():
     gpio.setmode(gpio.BCM)
     gpio.setup(18, gpio.OUT)
     gpio.output(18, gpio.LOW)
-}
-var start
-var stop
+
+start=0
+stop=0
 dt=datetime.datetime.now()
-if (os.stat("times.txt").st_size != 0){
+if (os.stat("times.txt").st_size != 0):
     file = open("times.txt", "r")
     times = file.read(10)
     file.close()
@@ -25,11 +25,10 @@ if (os.stat("times.txt").st_size != 0){
     stopTim = int(times[6,8])
     stopMin = int(times[9,11])
     stop = (stopTim*60+stopMin)
-}
+
 currentTime=(int(dt.hour*60)+int(dt.min))
-if (currentTime==start){
+if (currentTime==start):
     turnOn()
-}
-if (currentTime==start){
+
+if (currentTime==start):
     turnOff()
-}

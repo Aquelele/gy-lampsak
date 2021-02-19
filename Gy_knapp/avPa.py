@@ -4,21 +4,24 @@ import os
 
 def turnOn():
     gpio.setmode(gpio.BCM)
-    gpio.setup(18, gpio.OUT)
-    gpio.output(18, gpio.HIGH)
+    gpio.setup(24, gpio.out)
+    gpio.output(24, False)
         
 def turnOff():
     gpio.setmode(gpio.BCM)
-    gpio.setup(18, gpio.OUT)
-    gpio.output(18, gpio.LOW)
+    gpio.setup(24, gpio.out)
+    gpio.output(24, True)
 
 start=0
 stop=0
 dt=datetime.datetime.now()
 if (os.stat("times.txt").st_size != 0):
     file = open("times.txt", "r")
-    times = file.read(10)
+    times0 = file.read(10)
     file.close()
+    times = []
+    for i in times0:
+        times.append(int(i))
     startTim = int(times[0,2])
     startMin = int(times[3,5])
     start=(startTim*60+startMin)

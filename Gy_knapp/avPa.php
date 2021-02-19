@@ -12,13 +12,11 @@
          
         function turnon() {
             echo "på";
-            system("gpio-g mode 24 out") ;
-            system("gpio-g write 24 1") ;
+            echo shell_exec('sudo python3 /var/www/html/on.py')
         }
         function turnoff() {
             echo "av";
-            system("gpio-g mode 24 out") ;
-            system("gpio-g write 24 0") ;
+            echo shell_exec('sudo python3 /var/www/html/off.py')
         }
             
         if(isset($_POST['st']) && isset($_POST['sl'])){

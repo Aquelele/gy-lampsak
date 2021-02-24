@@ -4,7 +4,7 @@
 
 	<meta charset="UTF-8" > 
 	<Title>Av och På</Title>
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="knapp.css">
 	
     <script src="script.js"></script>
     

@@ -33,5 +33,5 @@ currentTime=(int(dt.hour*60)+int(dt.min))
 if (currentTime==start):
     turnOn()
 
-if (currentTime==start):
+if (currentTime==stop):
     turnOff()

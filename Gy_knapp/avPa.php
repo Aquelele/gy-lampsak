@@ -26,6 +26,10 @@
             $slut = $_POST['sl'];
             fwrite($myfile, $slut);
             fclose($myfile);
+            if(strlen($myfile)!=10){
+                $myfile = fopen("times.txt", "w") or die("Unable to open file!");
+                fclose($myfile);
+            }
         }
         if(isset($_POST['bort'])){
             $myfile = fopen("times.txt", "w") or die("Unable to open file!");
@@ -47,18 +51,6 @@
         elseif(isset($_POST['på'])==false && isset($_POST['av'])==false){
             echo '<style>#av{visibility: hidden !important;}</style>';
         }
-
-
-        $file = fopen("times.txt", "r");
-        
-        $times = fread($file,"10");
-        fclose($file);
-        
-        $start = substr($times, 0, 5);
-        $stop = substr($times, 5, 10);
-
-        
-        echo "Start $start. Stop $stop";
     
     ?>
     <body>
@@ -76,6 +68,20 @@
     
         <form method="post">
             <br><h4>Timer:</h4>
+
+            <?php
+                $file = fopen("times.txt", "r");
+                
+                $times = fread($file,"10");
+                fclose($file);
+                
+                $start = substr($times, 0, 5);
+                $stop = substr($times, 5, 10);
+
+                
+                echo "Start $start. Stop $stop ";
+            ?>
+
             <label for="st">Starttid:</label><br>
             <input id="st" type="text" name="st" value="hh:mm"/><br>
             <label for="sl">Sluttid:</label><br>

@@ -12,11 +12,11 @@
          
         function turnon() {
             echo "på";
-            echo shell_exec('sudo python3 /var/www/html/on.py')
+            echo shell_exec('sudo python3 /var/www/html/on.py');
         }
         function turnoff() {
             echo "av";
-            echo shell_exec('sudo python3 /var/www/html/off.py')
+            echo shell_exec('sudo python3 /var/www/html/off.py');
         }
             
         if(isset($_POST['st']) && isset($_POST['sl'])){
@@ -61,28 +61,33 @@
         echo "Start $start. Stop $stop";
     
     ?>
+    <body>
+        <header>
+            <img class="logo" src="../Hemsida_switch/bilder/icon.png" alt="icon">
+        </header>
+
+        <form method="post">
+            <input id="på" type="submit" name="på" value="På"/> 
+            <input id="av" type="submit" name="av" value="Av"/> 
+        </form>
+
+        
+        
     
-    <form method="post">
-        <input id="på" type="submit" name="på" value="På"/> 
-        <input id="av" type="submit" name="av" value="Av"/> 
-    </form>
+        <form method="post">
+            <br><h4>Timer:</h4>
+            <label for="st">Starttid:</label><br>
+            <input id="st" type="text" name="st" value="hh:mm"/><br>
+            <label for="sl">Sluttid:</label><br>
+            <input id="sl" type="text" name="sl" value="hh:mm"/><br>
 
-    
-    
-   
-    <form method="post">
-        <br><h4>Timer:</h4>
-        <label for="st">Starttid:</label><br>
-        <input id="st" type="text" name="st" value="hh:mm"/><br>
-        <label for="sl">Sluttid:</label><br>
-        <input id="sl" type="text" name="sl" value="hh:mm"/><br>
+            <input id="ts" type="submit" value="Sett"/> 
+        </form>
 
-        <input id="ts" type="submit" value="Sett"/> 
-    </form>
+        <form method="post">
 
-    <form method="post">
+            <br><label for="bort">Tabort timer:</label><br>
 
-        <br><label for="bort">Tabort timer:</label><br>
-
-        <input id="bort" type="submit" name="bort" value="Bort"/> 
-    </form>
+            <input id="bort" type="submit" name="bort" value="Bort"/> 
+        </form>
+    </body>

@@ -1,3 +1,17 @@
+body{
+	background-color:#25252A
+}
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    }
+.logo{
+    cursor:pointer;
+    height:100px;
+    width:120px;
+}
 #start{
     display: none;
     width: 15%;

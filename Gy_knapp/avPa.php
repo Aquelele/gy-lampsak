@@ -58,42 +58,49 @@
             <img class="logo" src="../Hemsida_switch/bilder/icon.png" alt="icon">
         </header>
 
-        <form method="post">
-            <input id="på" type="submit" name="på" value="På"/> 
-            <input id="av" type="submit" name="av" value="Av"/> 
-        </form>
-
+        <div class="knapp">
+            <form method="post">
+                <input id="på" type="submit" name="på" value="På"/> 
+                <input id="av" type="submit" name="av" value="Av"/> 
+            </form>
+        </div>
         
         
-    
-        <form method="post">
-            <br><h4>Timer:</h4>
+        <div class="nyTimer">
+            <form method="post">
+                <br><h4>Timer:</h4>
 
-            <?php
-                $file = fopen("times.txt", "r");
-                
-                $times = fread($file,"10");
-                fclose($file);
-                
-                $start = substr($times, 0, 5);
-                $stop = substr($times, 5, 10);
+                <?php
+                    $file = fopen("times.txt", "r");
+                    
+                    $times = fread($file,"10");
+                    fclose($file);
+                    
+                    $start = substr($times, 0, 5);
+                    $stop = substr($times, 5, 10);
 
-                
-                echo "Start $start. Stop $stop ";
-            ?>
+                    
+                    echo "Start $start Stop $stop<br>";
+                ?>
 
-            <label for="st">Starttid:</label><br>
-            <input id="st" type="text" name="st" value="hh:mm"/><br>
-            <label for="sl">Sluttid:</label><br>
-            <input id="sl" type="text" name="sl" value="hh:mm"/><br>
+                <label for="st">Starttid:</label><br>
+                <input id="st" type="text" name="st" value="hh:mm"/><br>
+                <label for="sl">Sluttid:</label><br>
+                <input id="sl" type="text" name="sl" value="hh:mm"/><br>
 
-            <input id="ts" type="submit" value="Sett"/> 
-        </form>
+                <input id="ts" type="submit" value="Sett"/> 
+            </form>
+        </div>
 
-        <form method="post">
+        <div class="exiTimer">
+        </div>
 
-            <br><label for="bort">Tabort timer:</label><br>
+        <div class="timerBort">
+            <form method="post">
 
-            <input id="bort" type="submit" name="bort" value="Bort"/> 
-        </form>
+                <br><label for="bort">Tabort timer:</label><br>
+
+                <input id="bort" type="submit" name="bort" value="Bort"/> 
+            </form>
+        </div>
     </body>

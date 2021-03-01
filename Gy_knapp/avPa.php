@@ -73,29 +73,33 @@
         
         <div class="loda">
             <div class="nyTimer">
-                <form method="post">
-                    <br><h4>Timer:</h4>
+                <div class="iTimer">
+                    <form method="post">
+                        <br><h4>Timer:</h4>
 
-                    <label for="st">Starttid:</label><br>
-                    <input id="st" type="text" name="st" value="hh:mm"/><br>
-                    <label for="sl">Sluttid:</label><br>
-                    <input id="sl" type="text" name="sl" value="hh:mm"/><br>
+                        <label for="st">Starttid:</label><br>
+                        <input id="st" type="text" name="st" value="hh:mm"/><br>
+                        <label for="sl">Sluttid:</label><br>
+                        <input id="sl" type="text" name="sl" value="hh:mm"/><br>
 
-                    <input id="ts" type="submit" value="Sett"/> 
-                </form>
+                        <input id="ts" type="submit" value="Sett"/> 
+                    </form>
+                </div>
             </div>
 
             <div class="exiTimer">
-                <?php
-                    $file = fopen("times.txt", "r");
-                    
-                    $times = fread($file,"10");                    
-                    fclose($file);
+                <div class="iexi">
+                    <?php
+                        $file = fopen("times.txt", "r");
                         
-                    $start = substr($times, 0, 5);
-                    $stop = substr($times, 5, 10);
-                    echo "Start $start Stop $stop<br>";
-                ?>
+                        $times = fread($file,"10");                    
+                        fclose($file);
+                            
+                        $start = substr($times, 0, 5);
+                        $stop = substr($times, 5, 10);
+                        echo "Start $start Stop $stop<br>";
+                    ?>
+                </div>
             </div>
         </div>
         <div class="timerBort">

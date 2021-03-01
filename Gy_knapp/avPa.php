@@ -26,9 +26,14 @@
             $slut = $_POST['sl'];
             fwrite($myfile, $slut);
             fclose($myfile);
-            if(strlen($myfile)!=10){
+            $myfile = fopen("times.txt", "r") or die("Unable to open file!");
+            $l= fread($myfile, filesize("times.txt"));
+            fclose($myfile);
+            settype($l, "string");
+            if(strlen($l)!=10){
                 $myfile = fopen("times.txt", "w") or die("Unable to open file!");
                 fclose($myfile);
+                echo "Felinmatning av tiden";
             }
         }
         if(isset($_POST['bort'])){
@@ -57,50 +62,50 @@
         <header>
             <img class="logo" src="../Hemsida_switch/bilder/icon.png" alt="icon">
         </header>
-
-        <div class="knapp">
-            <form method="post">
-                <input id="på" type="submit" name="på" value="På"/> 
-                <input id="av" type="submit" name="av" value="Av"/> 
-            </form>
+        <div class="knapploda">
+            <div class="knapp">
+                <form method="post">
+                    <input id="på" type="submit" name="på" value="På"/> 
+                    <input id="av" type="submit" name="av" value="Av"/> 
+                </form>
+            </div>
         </div>
         
-        
-        <div class="nyTimer">
-            <form method="post">
-                <br><h4>Timer:</h4>
+        <div class="loda">
+            <div class="nyTimer">
+                <form method="post">
+                    <br><h4>Timer:</h4>
 
+                    <label for="st">Starttid:</label><br>
+                    <input id="st" type="text" name="st" value="hh:mm"/><br>
+                    <label for="sl">Sluttid:</label><br>
+                    <input id="sl" type="text" name="sl" value="hh:mm"/><br>
+
+                    <input id="ts" type="submit" value="Sett"/> 
+                </form>
+            </div>
+
+            <div class="exiTimer">
                 <?php
                     $file = fopen("times.txt", "r");
                     
-                    $times = fread($file,"10");
+                    $times = fread($file,"10");                    
                     fclose($file);
-                    
+                        
                     $start = substr($times, 0, 5);
                     $stop = substr($times, 5, 10);
-
-                    
                     echo "Start $start Stop $stop<br>";
                 ?>
-
-                <label for="st">Starttid:</label><br>
-                <input id="st" type="text" name="st" value="hh:mm"/><br>
-                <label for="sl">Sluttid:</label><br>
-                <input id="sl" type="text" name="sl" value="hh:mm"/><br>
-
-                <input id="ts" type="submit" value="Sett"/> 
-            </form>
+            </div>
         </div>
-
-        <div class="exiTimer">
-        </div>
-
         <div class="timerBort">
-            <form method="post">
+            <div class="knapp">
+                <form method="post">
 
-                <br><label for="bort">Tabort timer:</label><br>
+                    <br><label for="bort">Tabort timer:</label>
 
-                <input id="bort" type="submit" name="bort" value="Bort"/> 
-            </form>
+                    <input id="bort" type="submit" name="bort" value="Bort"/> 
+                </form>
+            </div>
         </div>
     </body>

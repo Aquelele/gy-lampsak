@@ -1,0 +1,238 @@
+/* Body */ 
+body {
+background-color:#E6EAEC;
+margin:0%;
+
+}
+
+/* bakgrunden för information och bilder */ 
+.back {
+	background-color:#DCE0E1;
+	margin-left:100px;
+	margin-right:100px;
+}
+/* anpassar bilder */ 
+.back img {
+	margin-left:10px;
+	width:700px;
+	height:450px;
+}
+
+/* backgrunden till hemmenyn */ 
+.heather {
+	background-color:#DCE4E9;
+	
+}
+
+/* Hem menyn struktur */ 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  
+  padding-left:70px;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: #475056;
+  text-align:center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family:impact;
+  font-size:30px;
+}
+
+li.dropdown {
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #475056;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {background-color: #DCE4E9;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+/* Text design */ 
+h1, h2 {
+	font-family: impact; 
+	font-size:50px;
+}
+h3 {
+	font-family:impact;
+	font-size:30px;
+	text-align:center;
+	color:hotpink;
+	font-weight: 300; 
+	
+}
+h4 {
+	font-family:impact;
+	font-size:22px;
+	color:white;
+	font-weight:300; 
+	margin:0px;
+	display:inline;
+}
+p {
+	font-family:arial;
+	font-size:20px;
+	margin-left:20px;
+	margin-right:270px;
+}
+/* Länk design */ 
+a:link {
+  text-decoration: none;
+}
+
+a{
+color:#475056;	
+}
+
+table {
+  border-collapse: collapse;
+  width: 70%;
+  font-size:20px;
+  border: 1px solid grey;
+  text-align: center;
+  
+   
+}
+
+th, td {
+  padding: 2px;
+  text-align: left;
+  border-bottom: 1px solid grey;
+  
+}
+tr:nth-child(even) {background-color: #f5f5f5 ;}
+
+tr:hover {
+	background-color: hotpink;
+}
+
+/* knapp design (hemmenyn) */ 
+input[type=text] {
+  background-color:white;
+  color: black;
+  border: 3px solid hotpink;
+}
+.button {
+	background-image: url("heats.jpg");
+   border-radius: 4px;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family:impact;
+  height:30px;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* Footer "lådan"*/ 
+.footer {
+	background-color:grey;
+	margin:0;
+	float:bottom;
+	height:300px;
+	
+	
+}
+/*kanpp nyhetsbrev design */
+input {
+	padding: 5px 10px;
+	display:inline;
+	
+}
+/* nyetsbrev inmatning */
+.form{
+	margin-left:120px;
+	height:200px;
+	width:130px;
+	
+	
+	
+}
+	/* Uppdelade delar i footer */
+.footerbox{
+	width:32%;
+	margin-left:1%;
+	height:300px;
+	float:left;
+	text-align:center;
+	
+	
+}
+
+/* made from täby with love // copyright */
+.thanks{
+    float:bottom;
+	float:right;
+	position:relative;
+}
+
+/* Jordklotet som snurrar runt */
+#bild {
+-webkit-animation: rotation 6s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}

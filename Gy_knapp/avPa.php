@@ -20,25 +20,15 @@
         }
             
         if(isset($_POST['st']) && isset($_POST['sl'])){
-            $myfile = fopen("times.txt", "w") or die("Unable to open file!");
             $start = $_POST['st'];
-            fwrite($myfile, $start);
             $slut = $_POST['sl'];
-            fwrite($myfile, $slut);
-            fclose($myfile);
-            $myfile = fopen("times.txt", "r") or die("Unable to open file!");
-            $l= fread($myfile, filesize("times.txt"));
-            fclose($myfile);
-            settype($l, "string");
-            if(strlen($l)!=10){
-                $myfile = fopen("times.txt", "w") or die("Unable to open file!");
-                fclose($myfile);
-                echo "Felinmatning av tiden";
-            }
+            $start = ($start[0] + $start[1] + $start[3] + $start[4]);
+            $slut = ($slut[0] + $slut[1] + $slut[3] + $slut[4]);
+            echo shell_exec("sudo python3 /var/www/html/updatetimer.py $start $slut");
         }
+
         if(isset($_POST['bort'])){
-            $myfile = fopen("times.txt", "w") or die("Unable to open file!");
-            fclose($myfile);
+            echo shell_exec("sudo python3 /var/www/html/updatetimer.py");
         }
 
         if(isset($_POST['på'])) { 

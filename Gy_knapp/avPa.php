@@ -64,7 +64,7 @@
         </div>
         
         <div class="loda">
-            <div class="nyTimer">
+            <div class="rut">
                 <div class="iTimer">
                     <form method="post">
                         <br><h4>Timer:</h4>
@@ -93,7 +93,7 @@
                 </div>
             </div>
 
-            <div class="exiTimer">
+            <div class="rut">
                 <div class="iexi">
                     <?php
                         $file = fopen("test.txt", "r");

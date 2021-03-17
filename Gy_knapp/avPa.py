@@ -21,12 +21,21 @@ file = open("test.txt", "r")
 times = file.readline()
 file.close()
 
+""" 
+if len(times) <4:
+    quit() 
+"""
+
+
 startTim = int(times[0] + times[1])
 startMin = int(times[2] + times[3])
 start = startTim*60+startMin
 stopTim = int(times[4] + times[5])
 stopMin = int(times[6] + times[7])
 stop = stopTim*60+stopMin
+
+if stop == start:
+    quit
 
 currentTime= int(dt.hour*60+dt.minute)
 

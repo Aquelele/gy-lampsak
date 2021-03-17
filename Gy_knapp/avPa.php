@@ -11,11 +11,11 @@
     <?php
          
         function turnon() {
-            echo "på";
+            //echo "på";
             echo shell_exec('sudo python3 /var/www/html/on.py');
         }
         function turnoff() {
-            echo "av";
+            //echo "av";
             echo shell_exec('sudo python3 /var/www/html/off.py');
         }
             
@@ -28,7 +28,7 @@
         }
 
         if(isset($_POST['bort'])){
-            echo shell_exec("sudo python3 /var/www/html/updatetimer.py");
+            echo shell_exec("sudo python3 /var/www/html/updatetimer.py 0000 0000");
         }
 
         if(isset($_POST['på'])) { 

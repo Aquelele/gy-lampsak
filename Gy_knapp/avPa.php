@@ -104,7 +104,7 @@
                         $start = substr($times, 0, 2) . ":" . substr($times, 2, 2);
                         $stop = substr($times, 4, 2) . "." . substr($times, 6, 2);
                         if($start == $stop){
-                            echo "Ingen timer är satt, sätt en vetja"
+                            echo "Ingen timer är satt, sätt en vetja";
                         }
                         else{
                             echo "Nuvarande timer<br>Start $start Stop $stop<br>";

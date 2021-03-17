@@ -71,7 +71,7 @@
 
                         <label for="st">Starttid:</label><br>
                         <input id="st" type="text" name="st" placeholder="<?php
-                            $file = fopen("times.txt", "r");
+                            $file = fopen("test.txt", "r");
                         
                             $times = fread($file,"8");                    
                             fclose($file);
@@ -80,9 +80,9 @@
                         ?>"/><br>
                         <label for="sl">Sluttid:</label><br>
                         <input id="sl" type="text" name="sl" placeholder="<?php
-                            $file = fopen("times.txt", "r");
+                            $file = fopen("test.txt", "r");
                         
-                            $times = fread($file,"10");                    
+                            $times = fread($file,"8");                    
                             fclose($file);
 
                             echo substr($times, 4, 2) . ":" . substr($times, 6, 2);
@@ -96,7 +96,7 @@
             <div class="exiTimer">
                 <div class="iexi">
                     <?php
-                        $file = fopen("times.txt", "r");
+                        $file = fopen("test.txt", "r");
                         
                         $times = fread($file,"10");                    
                         fclose($file);

@@ -24,7 +24,9 @@
             $slut = $_POST['sl'];
             $start = ($start[0] . $start[1] . $start[3] . $start[4]);
             $slut = ($slut[0] . $slut[1] . $slut[3] . $slut[4]);
-            echo shell_exec("sudo python3 /var/www/html/updatetimer.py $start $slut");
+            if($start != $slut){
+                echo shell_exec("sudo python3 /var/www/html/updatetimer.py $start $slut");
+            }
         }
 
         if(isset($_POST['bort'])){
@@ -101,7 +103,13 @@
                             
                         $start = substr($times, 0, 2) . ":" . substr($times, 2, 2);
                         $stop = substr($times, 4, 2) . "." . substr($times, 6, 2);
-                        echo "Start $start Stop $stop<br>";
+                        if($start == $stop){
+                            echo "Ingen timer är satt, sätt en vetja"
+                        }
+                        else{
+                            echo "Nuvarande timer<br>Start $start Stop $stop<br>";
+                        }
+                        
                     ?>
                 </div>
             </div>

@@ -5,12 +5,12 @@ import os
 
 def turnOn():
     gpio.setmode(gpio.BCM)
-    gpio.setup(24, gpio.out)
+    gpio.setup(24, gpio.OUT)
     gpio.output(24, False)
-        
+
 def turnOff():
     gpio.setmode(gpio.BCM)
-    gpio.setup(24, gpio.out)
+    gpio.setup(24, gpio.OUT)
     gpio.output(24, True)
 
 

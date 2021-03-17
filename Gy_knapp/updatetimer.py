@@ -2,7 +2,7 @@ import sys
 
 if len(sys.argv) <= 1:
     file = open("test.txt", "w")
-    file.write("")
+    file.write("00000000")
     file.close()
 else:
     startTime = sys.argv[1]

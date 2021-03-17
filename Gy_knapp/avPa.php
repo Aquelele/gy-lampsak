@@ -22,8 +22,8 @@
         if(isset($_POST['st']) && isset($_POST['sl'])){
             $start = $_POST['st'];
             $slut = $_POST['sl'];
-            $start = ($start[0] + $start[1] + $start[3] + $start[4]);
-            $slut = ($slut[0] + $slut[1] + $slut[3] + $slut[4]);
+            $start = ($start[0] . $start[1] . $start[3] . $start[4]);
+            $slut = ($slut[0] . $slut[1] . $slut[3] . $slut[4]);
             echo shell_exec("sudo python3 /var/www/html/updatetimer.py $start $slut");
         }
 
@@ -50,7 +50,7 @@
     ?>
     <body>
         <header>
-            <img class="logo" src="../Hemsida_switch/bilder/icon.png" alt="icon">
+            <img class="logo" src="icon.png" alt="icon">
         </header>
         <div class="knapploda">
             <div class="knapp">
@@ -68,9 +68,23 @@
                         <br><h4>Timer:</h4>
 
                         <label for="st">Starttid:</label><br>
-                        <input id="st" type="text" name="st" value="hh:mm"/><br>
+                        <input id="st" type="text" name="st" placeholder="<?php
+                            $file = fopen("times.txt", "r");
+                        
+                            $times = fread($file,"8");                    
+                            fclose($file);
+
+                            echo substr($times, 0, 2) . ":" . substr($times, 2, 2);
+                        ?>"/><br>
                         <label for="sl">Sluttid:</label><br>
-                        <input id="sl" type="text" name="sl" value="hh:mm"/><br>
+                        <input id="sl" type="text" name="sl" placeholder="<?php
+                            $file = fopen("times.txt", "r");
+                        
+                            $times = fread($file,"10");                    
+                            fclose($file);
+
+                            echo substr($times, 4, 2) . ":" . substr($times, 6, 2);
+                        ?>"/><br>
 
                         <input id="ts" type="submit" value="Sett"/> 
                     </form>
@@ -85,8 +99,8 @@
                         $times = fread($file,"10");                    
                         fclose($file);
                             
-                        $start = substr($times, 0, 5);
-                        $stop = substr($times, 5, 10);
+                        $start = substr($times, 0, 2) . ":" . substr($times, 2, 2);
+                        $stop = substr($times, 4, 2) . "." . substr($times, 6, 2);
                         echo "Start $start Stop $stop<br>";
                     ?>
                 </div>

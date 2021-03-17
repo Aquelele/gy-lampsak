@@ -57,8 +57,8 @@
         <div class="knapploda">
             <div class="knapp">
                 <form method="post">
-                    <input id="på" type="submit" name="på" value="På"/> 
-                    <input id="av" type="submit" name="av" value="Av"/> 
+                        <input id="på" type="submit" name="på" value="På"/> 
+                        <input id="av" type="submit" name="av" value="Av"/> 
                 </form>
             </div>
         </div>

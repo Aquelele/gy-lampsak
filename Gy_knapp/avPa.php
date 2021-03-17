@@ -24,7 +24,9 @@
             $slut = $_POST['sl'];
             $start = ($start[0] . $start[1] . $start[3] . $start[4]);
             $slut = ($slut[0] . $slut[1] . $slut[3] . $slut[4]);
-            if($start != $slut){
+            if(($start[0].$start[1]>23) || ($start[2].$start[3]>59) || ($slut[0].$slut[1]>23) || ($slut[2].$slut[3]>59)){
+                echo shell_exec("sudo python3 /var/www/html/updatetimer.py 0000 0000");
+            } elseif($start != $slut){
                 echo shell_exec("sudo python3 /var/www/html/updatetimer.py $start $slut");
             }
         }

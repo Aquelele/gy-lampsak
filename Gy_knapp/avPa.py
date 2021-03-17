@@ -17,7 +17,7 @@ def turnOff():
 start=0
 stop=0
 dt=datetime.datetime.now()
-file = open("test.txt", "r")
+file = open("/var/www/html/test.txt", "r")
 times = file.readline()
 file.close()
 

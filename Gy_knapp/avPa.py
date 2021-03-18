@@ -12,7 +12,7 @@ def turnOff():
     gpio.setmode(gpio.BCM)
     gpio.setup(24, gpio.OUT)
     gpio.output(24, True)
-
+    gpio.cleanup()
 
 start=0
 stop=0

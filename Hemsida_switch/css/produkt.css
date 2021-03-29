@@ -53,7 +53,7 @@ button:hover{
 }
 
 .produkt{
-	height:400px;
+	height:394px;
 	width: 100%;
 	background-color: rgba(0,136,169,1);
 }
@@ -148,8 +148,8 @@ h6{
 
 /*Slideshow vi*/
 .slidershow{
-  width:70%;
-  height: 90%;
+  width:80%;
+  height: 97%;
   overflow: hidden;
 }
 .middle{

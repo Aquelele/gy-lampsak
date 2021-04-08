@@ -18,5 +18,5 @@ sudo raspi-config, välj alternativ 3: Boot Options, efter det så väljer du de
 Placera alla filer från denna githuben i /var/www/html/ mappen.
 
 För att få timern att funka så måste filen checker.py köras hela tiden. Detta görs såhär: sudo nano /etc/rc.local
-i rc.local så längst ner på raden innan "exit 0" så skriv: "sudo bash -c "/usr/bin/python3 /var/www/html/checker.py > /home/pi/checker.log 2>&1" &"
+i rc.local längst ner, på raden innan "exit 0" så skriv: "sudo bash -c "/usr/bin/python3 /var/www/html/checker.py > /home/pi/checker.log 2>&1" &"
 

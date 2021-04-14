@@ -6,7 +6,6 @@
 	<Title>Av och På</Title>
 	<link rel="stylesheet" type="text/css" href="knapp.css">
 	
-    <script src="script.js"></script>
     
     <?php
          

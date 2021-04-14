@@ -45,7 +45,7 @@
             //när av knappen trycks på så gömms den och funktionen tunroff körs
         }
         elseif(isset($_POST['på'])==false && isset($_POST['av'])==false){
-            echo '<style>#av{visibility: hidden !important;}</style>';  //om varken on eller off är tryckt på så visas vara on knappen
+            echo '<style>#av{visibility: hidden !important;}</style>';  //om varken on eller off är tryckt på så visas bara on knappen
         }
     
     ?>
